@@ -80,7 +80,8 @@ export default function ProcessingPage() {
         formData.append("gps", JSON.stringify({ lat, lon }));
         formData.append("store_id", "demo-store");
 
-        const res = await fetch("http://127.0.0.1:8000/analyze-store", {
+        const baseUrl = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, '') || 'http://127.0.0.1:8000';
+        const res = await fetch(`${baseUrl}/analyze-store`, {
           method: "POST",
           body: formData,
         });
