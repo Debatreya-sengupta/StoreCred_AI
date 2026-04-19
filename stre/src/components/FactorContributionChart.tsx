@@ -24,13 +24,13 @@ export function FactorContributionChart({ data }: { data: FactorContribution[] }
           <Tooltip 
             cursor={{ fill: '#f1f5f9' }}
             contentStyle={{ borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)' }}
-            formatter={(val: number) => [`${val}%`, 'Contribution']}
+            formatter={(val: any) => [`${val}%`, 'Contribution']}
           />
           <Bar dataKey="score" radius={[0, 6, 6, 0]} barSize={28}>
             <LabelList 
               dataKey="score" 
               position="right" 
-              formatter={(val: number) => `${val}%`}
+              formatter={(val: any) => `${val}%`}
               style={{ fill: '#0f172a', fontWeight: 700, fontSize: 13 }}
             />
             {sortedData.map((entry, index) => (
